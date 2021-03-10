@@ -6,9 +6,9 @@ public class P1 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         ArrayList<Integer> list = new ArrayList<>();
-        list.add(2);
-        int y = 1;
-        int j = 2;
+        //list.add(2);
+        int y = 0;
+        int j = 1;
         while (y != n) {
             j++;
             boolean f = true;
