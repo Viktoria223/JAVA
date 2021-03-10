@@ -22,25 +22,23 @@ public class P1 {
                 list.add(3);
                 y++;
                 j = 3;
-                System.out.print("2 ");
-                System.out.print("3 ");
                 while (y != n) {
                     j += 2;
                     boolean f = true;
                     for (Integer i : list) {
                         if (j % i == 0) {
                             f = false;
+                            break;
                         }
                     }
                     if (f) {
                         list.add(j);
                         y++;
-                        System.out.print(j + " ");
                     }
                 }
-                /*for (Integer i : list) {
+                for (Integer i : list) {
                     System.out.print(i + " ");
-                }*/
+                }
             }
         }
     }
