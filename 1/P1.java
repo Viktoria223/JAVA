@@ -9,7 +9,6 @@ public class P1 {
         list.add(2);
         int y = 1;
         int j = 2;
-
         if (n == 1) {
             System.out.println(j);
         } else {
