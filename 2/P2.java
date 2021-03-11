@@ -13,17 +13,17 @@ public class P2 {
         list.add(per);
         boolean begin = false;
         boolean begin2 = false;
-        while(!per.equals("FINISH")) {
+        while (!per.equals("FINISH")) {
             list.add(per);
             per = sc.nextLine();
         }
-        for(int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             boolean isTrue = false;
-            if(list.get(i).equals("BEGIN")) {
+            if (list.get(i).equals("BEGIN")) {
                 r++;
                 begin = true;
             }
-            if(list.get(i).equals("END")) {
+            if (list.get(i).equals("END")) {
                 t++;
                 isTrue = true;
             }
@@ -33,7 +33,7 @@ public class P2 {
                     result.addAll(spare);
                     spare.add(list.get(i));
                 } else {
-                    if(t > 0) {
+                    if (t > 0) {
                         spare.add(list.get(i));
                     } else {
                         result.add(list.get(i));
@@ -41,29 +41,13 @@ public class P2 {
                     }
                 }
             }
-            if(begin) {
+            if (begin) {
                 begin2 = true;
             }
             r++;
         }
-        for(int i = result.size()-1; i >= 0; i--) {
+        for (int i = result.size() - 1; i >= 0; i--) {
             System.out.println(result.get(i));
         }
     }
 }
-
-
-/*boolean isTrue = false;
-        int r = 0;
-        while(!per.equals("FINISH")) {
-            if(per.equals("BEGIN")) {
-                isTrue = true;
-                r++;
-            }
-            if (r == 1) {
-
-            }
-
-
-            per = sc.nextLine();
-        }*/
