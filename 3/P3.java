@@ -9,30 +9,24 @@ public class P3 {
         boolean isTrue = true;
         Stack<Character> stack = new Stack<>();
         for (int z = 0; z < seq.length(); z++) {
-            char i = seq.charAt(z);
-            if (i == '(' || i == '[' || i == '{') {
-                stack.push(i);
+            //char i = seq.charAt(z);
+            if (seq.charAt(z) == '(' || seq.charAt(z) == '[' || seq.charAt(z) == '{') {
+                stack.push(seq.charAt(z));
                 uOpen++;
             } else {
                 uClose++;
             }
             if (!stack.empty()) {
-                if (i == ')' && stack.peek() == '(') {
+                if (seq.charAt(z) == ')' && stack.peek() == '(') {
                     stack.pop();
                 }
-                if (i == ']' && stack.peek() == '[') {
+                if (seq.charAt(z) == ']' && stack.peek() == '[') {
                     stack.pop();
                 }
-                if (i == '}' && stack.peek() == '{') {
+                if (seq.charAt(z) == '}' && stack.peek() == '{') {
                     stack.pop();
                 }
             }
-        }
-        for (int i = 0; i < seq.length(); i++) {
-            if (seq.charAt(i) == '(' || seq.charAt(i) == '[' || seq.charAt(i) == '{') {
-                isTrue = true;
-                break;
-            } else isTrue = false;
         }
         if(stack.empty() && uClose == uOpen) {
             System.out.print("YES");
