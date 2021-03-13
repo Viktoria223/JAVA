@@ -16,7 +16,7 @@ public class P3 {
             if (i == '(' || i == '[' || i == '{') {
                 stack.push(i);
             } else {
-                if (stack.empty()) {
+                if (stack.empty() && (i == ')' || i == ']' || i == '}')) {
                     isTrue = false;
                     break;
                 }
