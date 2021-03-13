@@ -11,30 +11,31 @@ public class P3 {
             list.add(j);
         }
         Stack<Character> stack = new Stack<>();
-        for (Character i : list) {
-            if (list.isEmpty()) {
-                break;
+        if(!list.isEmpty()) {
+            for (Character i : list) {
+                if (i == '(' || i == '[' || i == '{') {
+                    stack.push(i);
+                } else {
+                    if (stack.empty()) {
+                        isTrue = false;
+                        break;
+                    }
+                    if (i == ')' && stack.pop() != '(') {
+                        isTrue = false;
+                        break;
+                    }
+                    if (i == ']' && stack.pop() != '[') {
+                        isTrue = false;
+                        break;
+                    }
+                    if (i == '}' && stack.pop() != '{') {
+                        isTrue = false;
+                        break;
+                    }
+                }
             }
-            if (i == '(' || i == '[' || i == '{') {
-                stack.push(i);
-            } else {
-                if (stack.empty()) {
-                    isTrue = false;
-                    break;
-                }
-                if (i == ')' && stack.pop() != '(') {
-                    isTrue = false;
-                    break;
-                }
-                if (i == ']' && stack.pop() != '[') {
-                    isTrue = false;
-                    break;
-                }
-                if (i == '}' && stack.pop() != '{') {
-                    isTrue = false;
-                    break;
-                }
-            }
+        } else {
+            isTrue = false;
         }
         if (!stack.empty()) {
             isTrue = false;
