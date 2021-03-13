@@ -17,18 +17,16 @@ public class P3 {
             if (i == '(' || i == '[' || i == '{') {
                 stack.push(i);
             } else {
-                if (stack.empty() && (i == ')' || i == ']' || i == '}')) {
-                    isTrue = false;
-                    break;
-                }
-                if (i == ')' && stack.peek() == '(') {
-                    stack.pop();
-                }
-                if (i == ']' && stack.peek() == '[') {
-                    stack.pop();
-                }
-                if (i == '}' && stack.peek() == '{') {
-                    stack.pop();
+                if (!stack.empty()) {
+                    if (i == ')' && stack.peek() == '(') {
+                        stack.pop();
+                    }
+                    if (i == ']' && stack.peek() == '[') {
+                        stack.pop();
+                    }
+                    if (i == '}' && stack.peek() == '{') {
+                        stack.pop();
+                    }
                 }
             }
         }

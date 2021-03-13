@@ -1,4 +1,4 @@
-import java.util.*;
+/*import java.util.*;
 
 public class P4 {
     public static void main(String[] args) {
@@ -51,4 +51,4 @@ public class P4 {
             System.out.print("NO");
         }
     }
-}
+}*/
