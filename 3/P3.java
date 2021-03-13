@@ -22,10 +22,10 @@ public class P3 {
                 if (i == ')' && stack.peek() == '(') {
                     stack.pop();
                 }
-                if (i == ']' && stack.pop() != '[') {
+                if (i == ']' && stack.pop() == '[') {
                     stack.pop();
                 }
-                if (i == '}' && stack.pop() != '{') {
+                if (i == '}' && stack.pop() == '{') {
                     stack.pop();
                 }
             }
