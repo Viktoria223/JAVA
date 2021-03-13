@@ -63,10 +63,10 @@ public class P3 {
                 isTrue = false;
                 break;
             }
-        }
+        }*/
         if (!stack.empty()) {
             isTrue = false;
-        }*/
+        }
         if (isTrue) {
             System.out.print("YES");
         } else {
