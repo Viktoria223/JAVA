@@ -6,6 +6,7 @@ public class P3 {
         Scanner sc = new Scanner(System.in);
         ArrayList<Character> list = new ArrayList<>();
         String seq = sc.next();
+        int u = 0;
         boolean isTrue = true;
         /*for (int i = 0; i < seq.length(); i++) {
             char j = seq.charAt(i);
@@ -27,10 +28,15 @@ public class P3 {
                     if (i == '}' && stack.peek() == '{') {
                         stack.pop();
                     }
+                } else {
+                    u++;
                 }
             }
         }
         if (!stack.empty()) {
+            isTrue = false;
+        }
+        if (u != 0) {
             isTrue = false;
         }
         if (isTrue) {
