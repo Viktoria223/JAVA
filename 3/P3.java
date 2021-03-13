@@ -15,10 +15,10 @@ public class P3 {
             if (i == '(' || i == '[' || i == '{') {
                 stack.push(i);
             } else {
-                if (stack.empty()) {
+                /*if (stack.empty()) {
                     isTrue = false;
                     break;
-                }
+                }*/
                 if (i == ')' && stack.peek() == '(') {
                     stack.pop();
                 }
