@@ -12,6 +12,9 @@ public class P3 {
         }
         Stack<Character> stack = new Stack<>();
         for (Character i : list) {
+            if (list.isEmpty()) {
+                break;
+            }
             if (i == '(' || i == '[' || i == '{') {
                 stack.push(i);
             } else {
@@ -33,7 +36,16 @@ public class P3 {
                 }
             }
         }
-
+        if (!stack.empty()) {
+            isTrue = false;
+        }
+        if (isTrue) {
+            System.out.print("YES");
+        } else {
+            System.out.print("NO");
+        }
+    }
+}
 
         /*for (Character i : list) {
             if (i == '(' || i == '[' || i == '{') {
@@ -64,13 +76,4 @@ public class P3 {
                 break;
             }
         }*/
-        if (!stack.empty()) {
-            isTrue = false;
-        }
-        if (isTrue) {
-            System.out.print("YES");
-        } else {
-            System.out.print("NO");
-        }
-    }
-}
+
