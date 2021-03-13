@@ -6,7 +6,7 @@ public class P3 {
         String seq = sc.next();
         int uOpen = 0;
         int uClose = 0;
-        boolean isTrue = true;
+        //boolean isTrue = true;
         Stack<Character> stack = new Stack<>();
         for (int z = 0; z < seq.length(); z++) {
             char i = seq.charAt(z);
