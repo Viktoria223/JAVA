@@ -3,40 +3,29 @@ import java.util.*;
 public class P4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        Stack<Character> openBraces = new Stack<>();
-        int countOpen = 0;
-        int countClosed = 0;
-        boolean f = false;
-        for (int i = 0; i < s.length(); i++) {
-
-            if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
-                openBraces.push(s.charAt(i));
-                countOpen++;
-
-            } else countClosed++;
-            if (!openBraces.empty()) {
-                if (s.charAt(i) == ')' && openBraces.peek() == '(') {
-                    openBraces.pop();
-                }
-                if (s.charAt(i) == ']' && openBraces.peek() == '[') {
-                    openBraces.pop();
-                }
-                if (s.charAt(i) == '}' && openBraces.peek() == '{') {
-                    openBraces.pop();
+        Map<Integer, Integer> treeMap = new TreeMap<>();
+        int n = sc.nextInt();
+        int count = 0;
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            int x = sc.nextInt();
+            if (treeMap.containsKey(x)) {
+                treeMap.put(x, treeMap.get(x)+1);
+            } else {
+                treeMap.put(x, 1);
+            }
+        }
+        for (Map.Entry<Integer, Integer> i : treeMap.entrySet()) {
+            if (i.getValue() > count) {
+                count = i.getValue();
+                result = i.getKey();
+            }
+            if (i.getValue() == count) {
+                if (i.getKey() < result) {
+                    result = i.getKey();
                 }
             }
         }
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
-                f = true;
-                break;
-            } else f = false;
-        }
-        if (openBraces.empty() && countClosed == countOpen) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
+        System.out.print(result);
     }
 }
