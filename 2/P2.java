@@ -2,16 +2,16 @@ import java.util.*;
 
 public class P2 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         ArrayList<String> list = new ArrayList<>();
         ArrayList<String> result = new ArrayList<>();
         ArrayList<String> spare = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
         int r = 0;
         int t = 0;
-        String per = sc.nextLine();
-        list.add(per);
         boolean begin = false;
         boolean begin2 = false;
+        String per = sc.nextLine();
+        list.add(per);
         while (!per.equals("FINISH")) {
             list.add(per);
             per = sc.nextLine();
@@ -26,7 +26,7 @@ public class P2 {
                 t++;
                 isTrue = true;
             }
-            if (r > 3 && begin2) {  //r > 1 &&
+            if (r > 3 && begin2) {
                 if (isTrue) {
                     result.clear();
                     result.addAll(spare);
