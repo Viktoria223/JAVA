@@ -3,11 +3,6 @@ import java.util.*;
 public class P5 {
     static class Transaction {
         private char var;
-
-        public char getVar() {
-            return var;
-        }
-
         private String from;
 
         public String getFrom() {
@@ -43,11 +38,6 @@ public class P5 {
 
     static class Price {
         private char var;
-
-        public char getVar() {
-            return var;
-        }
-
         private String currency;
 
         public String getCurrency() {
@@ -98,7 +88,7 @@ public class P5 {
 
     public static Map<String, Integer> computeBalance(List<Transaction> txns, List<Price> price) {
         Map<String, Integer> map = new TreeMap<>();
-        Map<String, Map<String, Integer>> bals = computeBalancesCur((List<Transaction>) txns);
+        Map<String, Map<String, Integer>> bals = computeBalancesCur(txns);
         for (Map.Entry<String, Map<String, Integer>> entry : bals.entrySet()) {
             map.put(entry.getKey(), 0);
             Map<String, Integer> amts = entry.getValue();
@@ -128,9 +118,6 @@ public class P5 {
             for (int i = 0; i < words.length; i++) {
                 mas[i] = words[i];
             }
-            /*for (int i = 0; i < words.length; i++) {
-                mas[i] = words[i];
-            }*/
             if (p == 'c') {
                 int i = Integer.parseInt(mas[2]);
                 price.add(new Price(p, mas[1], i));
@@ -142,7 +129,6 @@ public class P5 {
             enter = sc.nextLine();
             p = enter.charAt(0);
         }
-
         Map<String, Integer> map = new TreeMap<>(computeBalance(txns, price));
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + ' ' + entry.getValue());
