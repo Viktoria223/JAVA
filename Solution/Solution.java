@@ -5,37 +5,44 @@ public class Solution {
         String name;
         String birthday;
         int discount;
+
         public Customer(String name, String birthday, int discount) {
             this.name = name;
             this.birthday = birthday;
             this.discount = discount;
         }
     }
+
     static class Item {
         String name;
         String manufacturer;
         int price;
+
         public Item(String name, String manufacturer, int price) {
             this.name = name;
             this.manufacturer = manufacturer;
             this.price = price;
         }
     }
+
     static class Shop {
         String name;
         String opening;
         String workhours;
+
         public Shop(String name, String opening, String workhours) {
             this.name = name;
             this.opening = opening;
             this.workhours = workhours;
         }
     }
+
     static class Purchase {
         String date;
         String customer;
         String item;
         String shop;
+
         public Purchase(String date, String customer, String shop, String item) {
             this.date = date;
             this.customer = customer;
@@ -52,13 +59,25 @@ public class Solution {
             map.put(i.name, i.opening);
             shop = i.opening;
         }
+        int y = 0;
+        int yshop = 0;
         for (Shop i : shops) {
-            for (int j = 0; j < 10; j++) {
-                int y = Integer.parseInt(String.valueOf(i.opening.charAt(j)));
-                int yshop = Integer. parseInt(String.valueOf(shop.charAt(j)));
-                if (y < yshop) {
-                    map.remove(shop);
-                    shop = i.name;
+            /*for (int j = 0; j < 10; j++) {
+                //y = Integer.parseInt(String.valueOf(i.opening.charAt(j)));
+                //yshop = Integer.parseInt(String.valueOf(shop.charAt(j)));
+
+
+            }*/
+            String u = i.opening;
+            String[] word1 = u.split("-");
+            String[] word2 = shop.split("-");
+            /*if (y < yshop) {
+                map.remove(shop);
+                shop = i.name;
+            }*/
+            for(int h = 0; h < 3; h++) {
+                if (word1[h] < word2[h]) {
+                    shop = u;
                 }
             }
         }
