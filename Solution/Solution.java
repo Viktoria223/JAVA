@@ -67,6 +67,7 @@ public class Solution {
                 list.add(i);
             }
         }
+        System.out.print(list);
     }
 
     public static void main(String[] args) {
