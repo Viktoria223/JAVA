@@ -76,7 +76,9 @@ public class Solution {
                 shop = i.name;
             }*/
             for(int h = 0; h < 3; h++) {
-                if (word1[h] < word2[h]) {
+                int k = Integer.parseInt(word1[h]);
+                int m = Integer.parseInt(word1[h]);
+                if (k < m) {
                     shop = u;
                 }
             }
