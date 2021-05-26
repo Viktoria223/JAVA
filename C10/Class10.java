@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.*;
 
-class Transaction {
+/*class Transaction {
     private String from;
     public String getFrom() { return from; }
     private String to;
@@ -41,3 +41,4 @@ public class Class10 {
 
     }
 }
+*/
